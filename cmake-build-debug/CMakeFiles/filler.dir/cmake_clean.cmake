@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/filler.dir/parsing.c.o"
   "CMakeFiles/filler.dir/trash.c.o"
   "CMakeFiles/filler.dir/get_answer.c.o"
-  "CMakeFiles/filler.dir/visualization.c.o"
-  "CMakeFiles/filler.dir/testNcurses.c.o"
   "filler.pdb"
   "filler"
 )

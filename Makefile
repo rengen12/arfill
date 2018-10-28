@@ -14,9 +14,9 @@
 
 CC = gcc
 NAME = ariabyi.filler
-SRC = main.c parsing.c get_answer.c trash.c visualization.c
+SRC = main.c parsing.c get_answer.c trash.c
 
-CFLAGS = -lncurses #-Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 HEADER = -I ./
 LIBINCL = -L. libft/libft.a
 LIBDIR = ./libft

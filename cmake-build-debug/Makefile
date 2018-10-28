@@ -204,33 +204,6 @@ parsing.c.s:
 	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/parsing.c.s
 .PHONY : parsing.c.s
 
-testNcurses.o: testNcurses.c.o
-
-.PHONY : testNcurses.o
-
-# target to build an object file
-testNcurses.c.o:
-	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/testNcurses.c.o
-.PHONY : testNcurses.c.o
-
-testNcurses.i: testNcurses.c.i
-
-.PHONY : testNcurses.i
-
-# target to preprocess a source file
-testNcurses.c.i:
-	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/testNcurses.c.i
-.PHONY : testNcurses.c.i
-
-testNcurses.s: testNcurses.c.s
-
-.PHONY : testNcurses.s
-
-# target to generate assembly for a file
-testNcurses.c.s:
-	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/testNcurses.c.s
-.PHONY : testNcurses.c.s
-
 trash.o: trash.c.o
 
 .PHONY : trash.o
@@ -258,33 +231,6 @@ trash.c.s:
 	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/trash.c.s
 .PHONY : trash.c.s
 
-visualization.o: visualization.c.o
-
-.PHONY : visualization.o
-
-# target to build an object file
-visualization.c.o:
-	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/visualization.c.o
-.PHONY : visualization.c.o
-
-visualization.i: visualization.c.i
-
-.PHONY : visualization.i
-
-# target to preprocess a source file
-visualization.c.i:
-	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/visualization.c.i
-.PHONY : visualization.c.i
-
-visualization.s: visualization.c.s
-
-.PHONY : visualization.s
-
-# target to generate assembly for a file
-visualization.c.s:
-	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/visualization.c.s
-.PHONY : visualization.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -303,15 +249,9 @@ help:
 	@echo "... parsing.o"
 	@echo "... parsing.i"
 	@echo "... parsing.s"
-	@echo "... testNcurses.o"
-	@echo "... testNcurses.i"
-	@echo "... testNcurses.s"
 	@echo "... trash.o"
 	@echo "... trash.i"
 	@echo "... trash.s"
-	@echo "... visualization.o"
-	@echo "... visualization.i"
-	@echo "... visualization.s"
 .PHONY : help
 
 

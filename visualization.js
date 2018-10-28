@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/Users/amichak/.brew/bin/node
 
 var readline = require('readline');
 var rl = readline.createInterface({

@@ -95,16 +95,7 @@
 		<Unit filename="/Users/amichak/CLionProjects/Filler/parsing.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/amichak/CLionProjects/Filler/testNcurses.c">
-			<Option target="filler"/>
-		</Unit>
 		<Unit filename="/Users/amichak/CLionProjects/Filler/trash.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/amichak/CLionProjects/Filler/visualization.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/amichak/CLionProjects/Filler/visualization.h">
 			<Option target="filler"/>
 		</Unit>
 		<Unit filename="/Users/amichak/CLionProjects/Filler/CMakeLists.txt">

@@ -4,7 +4,7 @@ char    *append_char(char **s, char c)
 {
 	char *temp;
 	size_t len;
-	
+
 	if (!*s)
 	{
 		temp = ft_memalloc(2);
@@ -17,7 +17,7 @@ char    *append_char(char **s, char c)
 	ft_strcpy(temp, *s);
 	temp[len] = c;
 	temp[len + 1] = '\0';
-//	free(*s); //we need free this
+	free(*s); //we need free this
 	*s = NULL;
 	return (temp);
 }
@@ -25,7 +25,7 @@ char    *append_char(char **s, char c)
 int lgnl(int fd, char **line)
 {
 	char buf;
-	
+
 	if (fd < 0 || !line)
 		return (-1);
 	*line = NULL;
@@ -130,7 +130,7 @@ char			*ft_multjoin1(int field, ...)
 		fin = ft_strdup(dest);
 		free(dest);
 		dest = NULL;
-		if (!i)
+		if (i)
 			free(temp);
 		i = 0;
 	}

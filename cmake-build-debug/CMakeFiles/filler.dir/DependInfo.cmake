@@ -7,9 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/amichak/CLionProjects/Filler/get_answer.c" "/Users/amichak/CLionProjects/Filler/cmake-build-debug/CMakeFiles/filler.dir/get_answer.c.o"
   "/Users/amichak/CLionProjects/Filler/main.c" "/Users/amichak/CLionProjects/Filler/cmake-build-debug/CMakeFiles/filler.dir/main.c.o"
   "/Users/amichak/CLionProjects/Filler/parsing.c" "/Users/amichak/CLionProjects/Filler/cmake-build-debug/CMakeFiles/filler.dir/parsing.c.o"
-  "/Users/amichak/CLionProjects/Filler/testNcurses.c" "/Users/amichak/CLionProjects/Filler/cmake-build-debug/CMakeFiles/filler.dir/testNcurses.c.o"
   "/Users/amichak/CLionProjects/Filler/trash.c" "/Users/amichak/CLionProjects/Filler/cmake-build-debug/CMakeFiles/filler.dir/trash.c.o"
-  "/Users/amichak/CLionProjects/Filler/visualization.c" "/Users/amichak/CLionProjects/Filler/cmake-build-debug/CMakeFiles/filler.dir/visualization.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

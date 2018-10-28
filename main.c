@@ -35,11 +35,6 @@ void 	set_nude_pieces_coord(t_filler *filler)
 	}
 }
 
-void	find_absolute_coord(t_filler *filler)
-{
-
-}
-
 int 	check_absolute_cord(t_filler *filler, t_choices *temp)
 {
 	if (filler->choices->x - temp->x > filler->map.size_x || filler->choices->y - temp->y > filler->map.size_y ||
@@ -71,15 +66,13 @@ void 	clean_map(t_filler *filler)
 	int 	c;
 	
 	c = 0;
-	if (!filler || !filler->map.map || !filler->bfs)
+	if (!filler || (!filler->map.map && !filler->bfs))
 		return ;
-	while (c < filler->map.size_y)
+	while (c <= filler->map.size_y)
 	{
-//		if (filler->map.map[c] && *(filler->map.map[c])) // I HAVE TO FREE THESE
-//			free(filler->map.map[c]);
-		if (filler->bfs[c])
-			free(filler->bfs[c]);
-		c++;
+		free(filler->map.map[c]);
+//		c++;
+		free(filler->bfs[c++]);
 	}
 	if (filler->map.map)
 	{
@@ -98,21 +91,13 @@ void 	clean_piece(t_filler *filler)
 	int 	c;
 	
 	c = 0;
-	if (!filler || !filler->piece.piece || !filler->piece.real_piece)
+	if (!filler || (!filler->piece.piece && !filler->piece.real_piece))
 		return ;
 	while (c < filler->piece.size_y)
-	{
-		if (filler->piece.piece[c])
-			free(filler->piece.piece[c]);
-		c++;
-	}
+		free(filler->piece.piece[c++]);
 	c = 0;
 	while (c < (filler->piece.end_y - filler->piece.start_y + 1))
-	{
-		if (filler->piece.real_piece[c])
-			free(filler->piece.real_piece[c]);
-		c++;
-	}
+		free(filler->piece.real_piece[c++]);
 	if (filler->piece.piece)
 		free(filler->piece.piece);
 	if (filler->piece.real_piece)
@@ -133,7 +118,6 @@ void    clean_all(t_filler *filler)
         filler->choices = temp;
     }
 	filler->piece = (t_piece){0, 0, 0, 0, 0, 0, NULL, NULL};
-	filler->piece.real_piece = NULL;
 }
 
 char			*ft_multjoin1(int field, ...);
@@ -145,30 +129,28 @@ int 	give_answer(t_filler *filler)
 	
 	find_the_best_choice(filler);
 	if (!filler->choices)
-	{
-		clean_all(filler);
 		return  (1);
-	}
 	filler->choices->x -= filler->piece.start_x;
 	filler->choices->y -= filler->piece.start_y;
-	buff = ft_multjoin1(6, ft_itoa(filler->choices->y), NULL,  " ", ft_itoa(filler->choices->x), NULL, "\n");
+	buff = ft_multjoin1(6,  NULL, ft_itoa(filler->choices->y), " ", NULL, ft_itoa(filler->choices->x), "\n");
 	ft_putstr_fd(buff, 1);
 	free(buff);
 	return (0);
 }
 
-
-int		main(void)
+int submain()
 {
-	char *line;
-	t_filler filler;
+	char		*line;
+	t_filler	filler;
 
 	filler.my = '\0';
-    fd = open("test", O_RDWR | O_APPEND);
 	while (lgnl(0, &line) > 0)
 	{
-        if (!line || *line == '\n' || *line == 0)
-            exit (1);
+		if (!line || *line == '\n' || *line == 0)
+		{
+			ft_strdel(&line);
+			exit(1);
+		}
 		if (!filler.my && ft_strstr(line, "$$$") && ft_strstr(line, "ariabyi.filler"))
 		{
 			filler.my = (line[10] == '1') ? (char)'O' : (char)'X';
@@ -177,19 +159,31 @@ int		main(void)
 		else if (ft_strstr(line, "Plateau "))
 		{
 			get_filler(line, &filler, 1);
-            fill_map(&filler, 1);
-        }
+			fill_map(&filler, 1);
+		}
 		else if (ft_strstr(line, "Piece "))
 		{
 			get_filler(line, &filler, 3);
-            fill_piece(&filler);
+			fill_piece(&filler);
 			set_nude_pieces_coord(&filler);
 			get_real_piece(&filler);
 			real_work(&filler);
-           	if (give_answer(&filler) == 1)
-           		return (0);
-            clean_all(&filler);
-        }
+			if (give_answer(&filler) == 1) {
+				clean_all(&filler);
+				ft_strdel(&line);
+				return (1);
+			}
+			clean_all(&filler); //mem break
+		}
+		ft_strdel(&line);
 	}
+	return (0);
+}
+
+
+int		main(void)
+{
+	submain();
+	while(1);
     return (0);
 }

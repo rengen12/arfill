@@ -23,7 +23,6 @@
 
 #include "libft/libft.h"
 #include "stdio.h"
-#include "visualization.h"
 
 int fd;
 typedef struct	s_map
@@ -53,7 +52,6 @@ typedef struct	s_choices
 	int					y;
 	int					points;
 	struct s_choices	*next;
-
 }				t_choices;
 
 typedef struct	s_filler
